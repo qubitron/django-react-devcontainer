@@ -1,0 +1,5 @@
+{
+    "remote.extensionKind": {
+      "ms-azuretools.vscode-docker": "ui"
+    },
+}

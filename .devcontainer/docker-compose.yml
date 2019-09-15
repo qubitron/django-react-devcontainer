@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  app:
+    ports: 
+     - 8000:8000
+    environment:
+      DJANGO_SETTINGS_MODULE: exampleapp.devcontainersettings
+    build: 
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+
+    volumes:
+      - ..:/workspace
+      
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+    
+    links: 
+      - db
+    
+  db:
+    image: postgres
+    restart: unless-stopped
+    ports: 
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: LocalPassword
