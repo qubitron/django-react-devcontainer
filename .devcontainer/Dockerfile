@@ -37,6 +37,12 @@ RUN apt-get update \
     && pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt \
     && rm -rf /tmp/pip-tmp \
     #
+    # Install node for building front-ends
+    && apt-get update \
+    && apt-get -y install curl gnupg \
+    && curl -sL https://deb.nodesource.com/setup_11.x  | bash - \
+    && apt-get -y install nodejs \
+    #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
