@@ -131,3 +131,13 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Configure django-storages from environment variables if account name is set
+if 'AZURE_ACCOUNT_NAME' in os.environ:
+    DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+    STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+    AZURE_ACCOUNT_NAME=os.environ['AZURE_ACCOUNT_NAME']
+    AZURE_ACCOUNT_KEY=os.environ['AZURE_ACCOUNT_KEY']
+    AZURE_CONTAINER=os.environ['AZURE_CONTAINER']
+
+
