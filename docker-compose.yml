@@ -1,0 +1,20 @@
+version: '2.1'
+
+services:
+  newapp:
+    image: exampleapp
+    build: .
+    env_file: .env.sample
+    ports:
+      - 8000:8000
+    links: 
+      - db
+
+  db:
+    image: postgres
+    restart: unless-stopped
+    ports: 
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: LocalPassword
+

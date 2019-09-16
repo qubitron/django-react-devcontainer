@@ -4,8 +4,13 @@ services:
   app:
     ports: 
      - 8000:8000
+     - 3000:3000
     environment:
-      DJANGO_SETTINGS_MODULE: exampleapp.devcontainersettings
+      DB_ENGINE: django.db.backends.postgresql
+      DB_USER: postgres
+      DB_NAME: postgres
+      DB_HOST: db
+      DB_PASSWORD: LocalPassword
     build: 
       context: ..
       dockerfile: .devcontainer/Dockerfile
