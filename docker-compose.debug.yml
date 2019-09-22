@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  newapp:
+    image: newapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000

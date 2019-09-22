@@ -28,7 +28,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'frontend',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,3 +125,13 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend')
 STATICFILES_DIRS = [
     os.path.join(REACT_APP_DIR, 'build', 'static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Configure django-storages from environment variables if account name is set
+if 'AZURE_ACCOUNT_NAME' in os.environ:
+    DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+    STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+    AZURE_ACCOUNT_NAME=os.environ['AZURE_ACCOUNT_NAME']
+    AZURE_ACCOUNT_KEY=os.environ['AZURE_ACCOUNT_KEY']
+    AZURE_CONTAINER=os.environ['AZURE_CONTAINER']
