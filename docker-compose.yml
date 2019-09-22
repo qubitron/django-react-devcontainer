@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   app:
-    image: exampleapp
+    image: djangocon.azurecr.io/django-react-sample
     build: .
     # load connection strings / secrets from the .env file
     env_file: 

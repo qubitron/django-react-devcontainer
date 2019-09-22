@@ -22,9 +22,8 @@ SECRET_KEY = '+ob9@xcz)xi=enyx87&(=m@ge)bfi(o=+z!b60wp*7relf9a(6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
+AZURE_APPSERVICE_HOSTNAME = os.environ.get('APPSETTING_WEBSITE_SITE_NAME', '')
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", f"{AZURE_APPSERVICE_HOSTNAME}.azurewebsites.net"]
 # Application definition
 
 INSTALLED_APPS = [
