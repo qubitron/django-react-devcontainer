@@ -12,5 +12,4 @@ apiRouter.register(r'groups', views.GroupViewSet)
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/', include(apiRouter.urls)),
-    path('', views.index, name='index'),
 ]

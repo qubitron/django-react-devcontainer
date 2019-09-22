@@ -3,7 +3,6 @@ version: '3'
 services:
   app:
     ports: 
-     - 3000:3000
      - 8000:8000
     environment:
       DB_ENGINE: django.db.backends.postgresql
