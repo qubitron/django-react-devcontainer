@@ -1,9 +1,10 @@
 version: '2.1'
 
 services:
-  newapp:
-    image: exampleapp
+  app:
+    image: djangocon.azurecr.io/django-react-sample
     build: .
+    # load connection strings / secrets from the .env file
     env_file: 
       - .env
     ports:
@@ -11,6 +12,7 @@ services:
     links: 
       - db
 
+  # for testing against a local database
   db:
     image: postgres
     restart: unless-stopped

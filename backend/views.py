@@ -1,7 +1,12 @@
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets, routers
+from django.shortcuts import render
+from django.http import HttpResponse
 
+from rest_framework import viewsets, routers
 from backend.serializers import UserSerializer, GroupSerializer
+
+from mysite import settings
+import os
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -18,6 +23,15 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
+# View to return the static front-end code
+def index(request):
+    try:
+        with open(os.path.join(settings.REACT_APP_DIR, 'build', 'index.html')) as f:
+            return HttpResponse(f.read())
+    except FileNotFoundError:
+        return HttpResponse(
+            """
+            Please build the front-end using cd frontend && npm install && npm run build 
+            """,
+            status=501,
+        )

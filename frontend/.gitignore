@@ -21,3 +21,6 @@ coverage
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# don't check in package-lock.json, it causes problems
+package-lock.json
