@@ -14,8 +14,8 @@ It was built for a DjangoCon 2019 talk.
 Pre-requisites:
 - [Docker community edition](https://docs.docker.com/install/)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Docker Extension]()
-- [Remote - Containers Extension]()
+- [Docker Extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
+- [Remote - Containers Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 Clone the repo and open the workspace:
 ```
@@ -40,4 +40,11 @@ python manage.py createsuperuser
 python manage.py runserver 0.0.0.0:8000
 ```
 
+## Learn More
 
+You may be interested to check out some of the additional links for more information:
+ - [Developing inside a container on a remote docker host](https://code.visualstudio.com/docs/remote/containers-advanced#_developing-inside-a-container-on-a-remote-docker-host)
+ - [Django Webpack Loader](https://github.com/owais/django-webpack-loader), for another way to serve up webpack from Django
+ - [Django Docker tutorial from Lincoln Loop](http://github.com/yml/docker_django_tutorial), with some advanced & useful features
+ - [Deploying Containers to Azure App Service with VS Code](https://docs.microsoft.com/en-us/azure/python/tutorial-deploy-containers-01)
+ - [Create a PostgreSQL database in Azure](https://docs.microsoft.com/en-us/azure/postgresql/quickstart-create-server-database-portal)
