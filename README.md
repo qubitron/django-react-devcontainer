@@ -6,8 +6,8 @@ It was built for a DjangoCon 2019 talk.
 
 ## Resources
 
- - [Slides](https://1drv.ms/p/s!Ak36tGOBftKVv0xETZ7vaaZGEyfh?e=E7r2HY)
- - Video - to be posted when available!
+ - Slides: [View in Browser](https://1drv.ms/p/s!Ak36tGOBftKVv0xETZ7vaaZGEyfh?e=E7r2HY), [Download](https://github.com/qubitron/django-react-devcontainer/raw/4_production/DjangoCon2019-Django_React_DevContainer.pptx)
+ - Video - [Video](https://www.youtube.com/watch?v=hwHRI59iGlw)
  
 ## Using the Code
 
