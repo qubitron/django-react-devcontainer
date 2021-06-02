@@ -3,5 +3,5 @@ djangorestframework
 psycopg2
 django-storages[azure]
 # work around for https://github.com/urllib3/urllib3/pull/1684
-urllib3==1.25.3
+urllib3==1.26.5
 
