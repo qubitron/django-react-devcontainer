@@ -40,7 +40,7 @@ RUN apt-get update \
     # Install node for building front-ends
     && apt-get update \
     && apt-get -y install curl gnupg \
-    && curl -sL https://deb.nodesource.com/setup_11.x  | bash - \
+    && curl -sL https://deb.nodesource.com/setup_18.x  | bash - \
     && apt-get -y install nodejs \
     #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
